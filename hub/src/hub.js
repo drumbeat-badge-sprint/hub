@@ -4,13 +4,23 @@
 
 ;Hub = (function() {
     var iframe = document.createElement("iframe");
+
     iframe.src = "http://hub/hub.html";
-    document.firstChild.appendChild(iframe);
-    var s_channel = Channel.build({
-        window: iframe.contentWindow,
-        origin: "*",
-        scope: "hub"
-    });
+    iframe.style.display = 'none';
+
+    var body = document.getElementsByTagName('body')[0];
+    body.appendChild(iframe);
+
+    try {
+	var s_channel = Channel.build({
+            window: iframe.contentWindow,
+            origin: "*",
+            scope: "hub"
+	});
+    } catch (e) {
+	alert(e);
+    }
+
     return {
         saveBadge: function(badge, onsuccess) {
             s_channel.call({method: "badge_put", params: badge, success: onsuccess});
