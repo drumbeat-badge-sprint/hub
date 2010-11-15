@@ -5,8 +5,8 @@
   </head>
   <body>
     <ul id="links">
-      <li><a href="#" onclick="addTestBadge();return false;">Claim Badge</a></li>
-      <li><a href="#" onclick="deleteBadges();return false;">Clear Badges</a></li>
+      <li><a href="#" id="claim_badge">Claim Badge</a></li>
+      <li><a href="#" id="clear_badge">Clear Badges</a></li>
     </ul>
     <br />
     <ul id="echoarea"/>
@@ -65,6 +65,14 @@ function addTestBadge() {
 }
 
 listBadges();
+
+document.getElementById('claim_badge').addEventListener(
+    'click', addTestBadge, false
+);
+
+document.getElementById('clear_badge').addEventListener(
+    'click', deleteBadges, false
+);
 
 </script>
 </html>
