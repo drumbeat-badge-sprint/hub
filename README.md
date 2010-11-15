@@ -1,23 +1,25 @@
 Badge Format
 ============
 
-Strawman example:
+### Strawman example:
 
-{
- "schema": "https://example.com/badge/1",
- "mustSupport": [],
- "title": "School of Webcraft Responder",
- "description": "This badge is in recognition of the helpful responses you have provided to fellow members of the School of Webcraft.",
- "timestamp": "1288882617",
- "expires": "8462729988",
- "badgeURL": "https://badger.mozilla.com/badges/asdf1234",
- "issuer": "https://badger.mozilla.com/",
- "issuee": [{"type": "email", "id": "thunder@mozilla.com"},
-            {"type": "openid", "id": "https://id.sandmill.org/"}],
-  "onclick": {"action": "iframe", "url": "http://cc.org/embed/blah.html"}
-}
+    {
+        "schema": "https://example.com/badge/1",
+        "mustSupport": [],
+        "title": "School of Webcraft Responder",
+        "description": "This badge is in recognition of the helpful responses you have provided to fellow members of the School of Webcraft.",
+        "timestamp": "1288882617",
+        "expires": "8462729988",
+        "badgeURL": "https://badger.mozilla.com/badges/asdf1234",
+        "issuer": "https://badger.mozilla.com/",
+        "issuerName": "P2PU School of Webcraft",
+        "imageURL": "https://badger.mozilla.com/badges/asdf1234/badge.jpg",
+        "issuee": [{"type": "email", "id": "thunder@mozilla.com"},
+                   {"type": "openid", "id": "https://id.sandmill.org/"}],
+        "onclick": {"action": "iframe", "url": "http://cc.org/embed/blah.html"}
+    }
 
-Key points:
+### Key points:
 
 * schema identifies this as a badge
 * mustSupport is used for versioning. It is an array of opaque strings which
